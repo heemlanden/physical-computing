@@ -1,12 +1,15 @@
-# Physical Computing - hulp bij het gebruik van sensoren en actuatoren
+# Physical Computing 
+## Aan de slag
+[Hier](voorbeeldcode/knipperlicht.py) vind je code om het ingebouwde lampje op je Wemos C3 Mini microcontroller paars te laten knipperen. Dit leert je over de basis van micropython.
+## Drivers voor sensoren en actuatoren
 Van bepaalde sensoren en actuatoren spreekt het gebruik niet meteen voor zich. Daarom gebruik je daarvoor drivers die het apparaat op de achtergrond aansturen, zodat jij je niet met de meest ingewikkelde details bezig hoeft te houden. In deze repository vind je enkele nuttige drivers. Deze drivers mag je vrijuit gebruiken in je PO.
-# Hoe gebruik je een driver?
-## De driver op je microcontroller zetten
+### Hoe gebruik je een driver?
+#### De driver op je microcontroller zetten
 Verbind je microcontroller met je computer en zorg dat je Thonny op deze microcontroller runt. (Als je Thonny inderdaad op je microcontroller runt, zie je als het goed is het woord MicroPython in je shell staan.) Maak vervolgens binnen Thonny een nieuw bestand aan met de knop linksboven in Thonny of met Ctrl+N. Kopieer de gehele inhoud van het driverbestand dat je wil gebruiken naar dit nieuwe bestand. Als je nu op opslaan klikt, krijg je de optie of je het nieuwe bestand wil opslaan op je computer of op het aangesloten MicroPython aparaat. Kies voor het MicroPython apparaat en geef je bestand dezelfde naam als het driverbestand uit deze repository (bijv. lichtsensor.py). Klik op OK om het bestand op te slaan.
-## De driver gebruiken in je hoofdcode
+#### De driver gebruiken in je hoofdcode
 In je hoofdcode (main.py of boot.py op je microcontroller) kan je je driver vervolgens gaan gebruiken. Zorg hiervoor dat je de driver (die je nu dus op je microcontroller hebt staan) eerst importeert. Dit doe je met `import` gevolgd door de naam van de driver zonder `.py` (dus bijv. `import lichtsensor`). Vervolgens kan je in je hoofdcode alle classes en functies gebruiken die in de geïmporteerde driver staan. In de meeste drivers staat één class, die bedoeld is om een specifieke sensor of actuator te bedienen. Deze heeft vaak de code van het desbetreffende apparaat als naam. (Vaak staat deze code ook op de sensor/actuator). Kijk in de drivercode hoe deze class voor jouw driver heet. (Voor de lichtsensordriver is dit bijv. BH1750.) Maak in je hoofdcode een object van deze class aan en geef daarbij de juiste Pin-nummers mee voor jou micropython opstelling. (Voor de lichtsensor kan je dit bijv. doen met `ls = lichtsensor.BH1750(4,5)`, als je de SDA-Pin van de lichtsensor met Pinout 4 hebt verbonden en de SCL-Pin met Pinout 5.) Nu kan je alle functies die in de driverclass gedefiniëerd zijn toepassen op je object. (Bijv. `print(ls.measurements)` bij het voorbeeld van de lichtsensor).
 
-# Overzicht van drivers in deze repository (met links)
+### Overzicht van drivers in deze repository (met links)
 * *[Sensor voor temperatuur en luchtvochtigheid](drivers/humtemp.py):* Herkenbaar aan de code AHT-20 die erop staat.
 * *[Lichtsensor](drivers/lichtsensor.py):* Herkenbaar aan de code GY-30 die erop staat.
 * *[OLED scherm](drivers/oled.py):* Klein zwart schermpje met witte pixels.
