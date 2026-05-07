@@ -25,7 +25,7 @@ class BH1750:
     MEASUREMENT_TIME_MIN = const(31)
     MEASUREMENT_TIME_MAX = const(254)
 
-    def __init__(self, address, i2c):
+    def __init__(self, i2c, address = 0x23):
         self._address = address
         self._i2c = i2c
         self._measurement_mode = BH1750.MEASUREMENT_MODE_ONE_TIME
