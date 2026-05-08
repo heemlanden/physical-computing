@@ -1,5 +1,4 @@
 from machine import Pin
-import time
 
 # Voorbeeld voor een simpele actuator (geen driver nodig):
 pin_num = 9 # Dit is het nummer van de pinout waarmee je de actuator verbonden hebt. 9 is een willekeurig voorbeeld.
