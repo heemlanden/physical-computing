@@ -14,3 +14,6 @@ In je hoofdcode (main.py of boot.py op je microcontroller) kan je je driver verv
 * *[Lichtsensor](drivers/lichtsensor.py):* Herkenbaar aan de code GY-30 die erop staat.
 * *[OLED scherm](drivers/oled.py):* Klein zwart schermpje met witte pixels.
 * *[Ultrasone afstandsmeter](drivers/ultrasoon.py):* Herkenbaar aan de twee cylinders die eruitzien als speakers.
+
+## i2c-objecten
+Aan sommige drivers moet je een i2c-object meegeven. Om deze drivers in je hoofdcode te kunnen gebruiken moet je ten eerste zorgen dat je boven aan je code de I2C class importeert met `from machine import I2C`. Vervolgens maak je een i2c-object met `i2c = I2C(sda,scl)` In deze code zijn `sda` en `scl` de pins van je microcontroller waar je de scl en sda poorten van je sensor/actuator op het aangesloten. Als je de sda-poort bijvoorbeeld op pinout 3 hebt zitten en de scl-poort op pinout 4, schrijf je `i2c = I2C(Pin(3),Pin(4))`. (Vergeet de Pin-functie dus niet toe te passen op deze getallen.) 
