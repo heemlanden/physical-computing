@@ -32,6 +32,8 @@ SET_CHARGE_PUMP = const(0x8D)
 # http://docs.micropython.org/en/latest/pyboard/library/framebuf.html
 class SSD1306(framebuf.FrameBuffer):
     def __init__(self, width, height, external_vcc):
+        # De dimensies van het standaardscherm bij ons op school zijn 128 bij 64 pixels.
+        # Als external_vcc moet je een i2c object meegeven
         self.width = width
         self.height = height
         self.external_vcc = external_vcc
