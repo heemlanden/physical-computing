@@ -1,6 +1,6 @@
 # Physical Computing 
 ## Aan de slag
-[Hier](voorbeeldcode/knipperlicht.py) vind je code om het ingebouwde lampje op je Wemos C3 Mini microcontroller paars te laten knipperen. Dit leert je over de basis van micropython.
+[Hier](voorbeeldcode/knipperlicht.py) vind je code om het ingebouwde lampje op je Wemos C3 Mini microcontroller paars te laten knipperen. Dit leert je over de basis van micropython. Van sommige sensoren en actuatoren spreekt het gebruik redelijk voor zich. Hier heb je geen driver voor nodig. [Hier](voorbeeldcode/simpele sensors en actuatoren.py) vind je de principes van hoe je daarmee werkt. Voor LED-strips gebruik je de neopixel-module, die ook [hier](voorbeeldcode/knipperlicht.py) gebruikt wordt. De uitleg hieronder gaat over actuatoren en sensors die minder voor zich spreken en waar je drivers voor nodig hebt.
 ## Drivers voor sensoren en actuatoren
 Van bepaalde sensoren en actuatoren spreekt het gebruik niet meteen voor zich. Daarom gebruik je daarvoor drivers die het apparaat op de achtergrond aansturen, zodat jij je niet met de meest ingewikkelde details bezig hoeft te houden. In deze repository vind je enkele nuttige drivers. Deze drivers mag je vrijuit gebruiken in je PO.
 ### Hoe gebruik je een driver?
