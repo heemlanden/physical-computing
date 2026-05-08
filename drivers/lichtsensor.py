@@ -26,10 +26,8 @@ class BH1750:
     MEASUREMENT_TIME_MIN = const(31)
     MEASUREMENT_TIME_MAX = const(254)
 
-    def __init__(self, sda_pin_num, scl_pin_num, address = 0x23):
-        i2c_sda = Pin(sda_pin_num)
-        i2c_scl = Pin(scl_pin_num)
-        i2c = I2C(0, sda=i2c_sda, scl=i2c_scl)
+    def __init__(self, sda, scl, address = 0x23):
+        i2c = I2C(0, sda=sda, scl=scl)
         self._address = address
         self._i2c = i2c
         self._measurement_mode = BH1750.MEASUREMENT_MODE_ONE_TIME
