@@ -32,8 +32,8 @@ CRC_INIT = const(0xFF)
 CRC_POLY = const(0x31)
 
 class AHT20():
-    def __init__(self, scl_pin_num, sda_pin_num, addr=ADDR):
-        self.i2c = I2C(0, scl=Pin(scl_pin_num), sda=Pin(sda_pin_num), freq=100000)  # Example for ESP32
+    def __init__(self, scl, sda, addr=ADDR):
+        self.i2c = I2C(0, scl=scl, sda=sda, freq=100000)  # Example for ESP32
         self.sleep = time.sleep_ms
         self.sleep(100)
         self.addr = addr
